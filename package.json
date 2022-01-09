@@ -1,0 +1,45 @@
+{
+  "name": "@codice-progressio/buscador",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^13.1.0",
+    "@angular/core": "^13.1.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+
+  "description": "Buscador sencillo para angular.",
+  "main": "karma.conf.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\"",
+    "postversion": "rm -r dist; ng build buscador --configuration production  && mkdir dist && cp -r ../../dist/buscador/* dist/ ",
+    "publicar": "np --contents=./dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RafaelAngelRamirez/buscador.git"
+  },
+  "keywords": [
+    "buscador",
+    "angular"
+  ],
+  "author": "Rafael Ramirez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RafaelAngelRamirez/buscador/issues"
+  },
+  "homepage": "https://github.com/RafaelAngelRamirez/buscador#readme",
+  "publishConfig": {},
+  "np": {
+    "access": "public",
+    "contents": "./dist"
+  },
+  "module": "./dist/fesm2015/codice-progressio-buscador.js",
+  "es2015": "./dist/fesm2015/codice-progressio-buscador.js",
+  "esm2015": "./dist/esm2015/codice-progressio-buscador.js",
+  "fesm2015": "./dist/fesm2015/codice-progressio-buscador.js",
+  "typings": "./dist/codice-progressio-buscador.d.ts",
+  "metadata": "./dist/codice-progressio-buscador.metadata.json",
+  "sideEffects": false
+}
