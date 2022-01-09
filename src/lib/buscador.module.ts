@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common'
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms'
 import { BuscadorComponent } from './buscador.component';
@@ -9,6 +10,7 @@ import { BuscadorComponent } from './buscador.component';
     BuscadorComponent
   ],
   imports: [
+    CommonModule,
     ReactiveFormsModule
   ],
   exports: [
