@@ -1,24 +1,44 @@
 # Buscador
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.0.
+Buscador limpio y sencillo para Angular.
 
-## Code scaffolding
+> Requiere los estilos de bootstrap 4 o 5 para funcionar y para los iconos
+> utiliza fontawesome
 
-Run `ng generate component component-name --project buscador` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project buscador`.
-> Note: Don't forget to add `--project buscador` or else it will be added to the default project in your `angular.json` file. 
+### Instalación
 
-## Build
+> `npm i @codice-progressio/buscador`
 
-Run `ng build buscador` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Uso
 
-## Publishing
+Agrega el buscador en el modulo más alto que lo necesites.
 
-After building your library with `ng build buscador`, go to the dist folder `cd dist/buscador` and run `npm publish`.
+```javascript
+@NgModule({
+  declarations: [AppComponent],
+  imports: [BrowserModule, FormsModule, BuscadorModule],
+  providers: [],
+  bootstrap: [AppComponent],
+})
+export class AppModule {}
+```
 
-## Running unit tests
+Llama al componente desde donde quieras.
 
-Run `ng test buscador` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```html
+<codice-buscador
+  (termino)="buscar($event)"
+  (escucharCarga)="escucharCarga = $event"
+  [encodeURIComponent]="encodeUriComponent"
+  [tiempoDeEspera]="tiempoDeEspera"
+></codice-buscador>
+```
 
-## Further help
+El componente expulsara el termino
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+| Directiva          | Dirección | Descripción                                                                                                                            |
+| ------------------ | --------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| termino            | out       | Arroja el termino limpio que se recibio                                                                                                |
+| escucharCarga      | out       | Emite un BehjaivorSubject<boolean> para detener la animación de carga                                                                  |
+| encodeUriComponent | input     | Codifica la cadena al regresar el valor por la directiva `termino`                                                                     |
+| tiempoDeEspera     | input     | Define el tiempo de espera antes de dejar de capturar lo capturado por el teclado y enviar el valor capturado a la directiva `termino` |
