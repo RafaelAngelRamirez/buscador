@@ -12,8 +12,8 @@
   "main": "karma.conf.js",
   "scripts": {
     "test": "echo \"Error: no test specified\"",
-    "postversion": "cd ../../; npm run build-buscador",
-    "publicar": "np --contents=../../dist/buscador"
+    "postversion": "ng build buscador --configuration production",
+    "publicar": "np --contents=../../dist/buscad"
   },
   "repository": {
     "type": "git",
