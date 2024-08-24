@@ -13,7 +13,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\"",
     "postversion": "ng build buscador --configuration production",
-    "publicar": "np --contents=../../dist/buscad"
+    "publicar": "npx np --contents=../../dist/buscad"
   },
   "repository": {
     "type": "git",
